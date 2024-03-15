@@ -1,0 +1,5 @@
+- name: Create symbolic link for Neovim configuration
+  file:
+    src: "{{ ansible_env.HOME }}/nvim"  # Source directory of your Neovim configuration
+    dest: "~/.config/nvim"  # Destination directory for the symlink
+    state: link
