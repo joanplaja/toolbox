@@ -1,3 +1,6 @@
+brew install ansible
+
+
 Neovim template: https://www.lazyvim.org/keymaps
 
 Link repository configuration to computer:
