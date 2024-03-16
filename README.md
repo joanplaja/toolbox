@@ -1,20 +1,27 @@
-# Installation
+# Mac Setup
 
-Mac setup:
+```
 curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
-
-Nvim standalone setup
-
-Ubuntu/Debian
- curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim ubuntu
- curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian
-
+```
 
 # Neovim 
 
-## Docker
+Neovim template https://www.lazyvim.org/ adapted to my style.
 
-Neovim template: https://www.lazyvim.org/keymaps
+## Installation
+
+### Standalone
+
+Ubuntu:
+```
+ curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim ubuntu
+ ```
+ Debian:
+```
+ curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian
+ ```
+
+### Docker
 
 ## key mappings
 
@@ -25,9 +32,9 @@ Neovim template: https://www.lazyvim.org/keymaps
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  leder + w + (h|j|k|l) | Move to (left|top|bottom|down) windows |
+|  leder + w + (h\|j\|k\|l) | Move to (left\|top\|bottom\|down) windows |
 
-### Files and folders
+### Files and folders
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
@@ -35,9 +42,9 @@ Neovim template: https://www.lazyvim.org/keymaps
 |  :edit $filename   | Creates/Opens files                     |
 
 
-### File explorer commands ( leader + e)
+### File explorer commands ( leader + e)
 
-| key binding     | action description                                  |
+| key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
 | a     | Add files and folders                     |
 | c     | Copy                     |
@@ -47,12 +54,18 @@ Neovim template: https://www.lazyvim.org/keymaps
 
 ### Tabs
 
-| key binding     | action description                                  |
+| key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-| tab * (h|l)     | Switch tab (left|right)                    |
+| tab * (h\|l)     | Switch tab (left\|right)                    |
 
-### Cursor
+### Cursor
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+|      |              |
 
 ### Copying
 
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
 | yyp     | copy current line to below                   |
