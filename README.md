@@ -3,8 +3,11 @@
 Mac setup:
 curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
 
-Nvim standalone setup:
-curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian|ubuntu
+Nvim standalone setup
+
+Ubuntu/Debian
+ curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim ubuntu
+ curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian
 
 
 # Neovim 

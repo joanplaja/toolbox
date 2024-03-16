@@ -30,17 +30,17 @@ nvim() {
 	case "$os" in
 	debian | ubuntu)
 		apt-get update && apt-get install -y curl tar nvim ninja-build gettext cmake unzip build-essential
-    # Install neovim
-    git clone https://github.com/neovim/neovim
-    cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-    git checkout v0.9.5
-    make
-    make install
-    mv build/bin/nvim /usr/bin/
-    # Configure my nvim configuration
-    mkdir -p ~/.config/nvim
-    curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz | tar xz -C ~/.config/ --strip-components=2 toolbox-main/nvim		
-    ;
+		# Install neovim
+		git clone https://github.com/neovim/neovim
+		cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+		git checkout v0.9.5
+		make
+		make install
+		mv build/bin/nvim /usr/bin/
+		# Configure my nvim configuration
+		mkdir -p ~/.config/nvim
+		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz | tar xz -C ~/.config/ --strip-components=2 toolbox-main/nvim
+		;;
 	*)
 		echo "Unsupported operating system: $os"
 		exit 1
