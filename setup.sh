@@ -29,7 +29,7 @@ nvim() {
 	# Download the nvim configuration folder
 	case "$os" in
 	debian | ubuntu)
-		apt-get update && apt-get install -y curl tar ninja-build gettext cmake unzip build-essential
+		apt-get update && apt-get install -y curl git tar ninja-build gettext cmake unzip build-essential
 		# Install neovim
 		git clone https://github.com/neovim/neovim
 		cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
