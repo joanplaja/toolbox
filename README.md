@@ -25,8 +25,9 @@ Ubuntu:
 
 ## key mappings
 
-+ : Mandatory key combination
-*: Optional key combination
+\+ : Mandatory key combination
+
+\*: Optional key combination
 
 ### Windows
 
