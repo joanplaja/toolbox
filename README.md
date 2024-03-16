@@ -17,8 +17,43 @@ Ubuntu/Debian
 
 Neovim template: https://www.lazyvim.org/keymaps
 
-| Key Binding     | Action Description                                  |
+## key mappings
+
++ : Mandatory key combination
+*: Optional key combination
+
+### Windows
+
+| key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-| tab + h     | Open tab on the left                     |
-| tab + l     | Open tab on the right                     |
-| yyp     | Copy current line to below                     |
+|  leder + w + (h|j|k|l) | Move to (left|top|bottom|down) windows |
+
+### Files and folders
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+|  leader + e   | Open file explorer                     |
+|  :edit $filename   | Creates/Opens files                     |
+
+
+### File explorer commands ( leader + e)
+
+| key binding     | action description                                  |
+|-----------------|-----------------------------------------------------|
+| a     | Add files and folders                     |
+| c     | Copy                     |
+| m     | Move   |
+| o     | Order                     |
+| i     | Info                     |
+
+### Tabs
+
+| key binding     | action description                                  |
+|-----------------|-----------------------------------------------------|
+| tab * (h|l)     | Switch tab (left|right)                    |
+
+### Cursor
+
+### Copying
+
+| yyp     | copy current line to below                   |
