@@ -23,7 +23,29 @@ mac() {
 }
 
 nvim() {
-	echo "Executing command 2..."
+	# Specify the operating system (e.g., debian, alpine, ubuntu)
+	local os="$1"
+
+	# Download the nvim configuration folder
+	case "$os" in
+	debian | ubuntu)
+		apt-get update && apt-get install -y curl tar nvim ninja-build gettext cmake unzip build-essential
+    # Install neovim
+    git clone https://github.com/neovim/neovim
+    cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+    git checkout v0.9.5
+    make
+    make install
+    mv build/bin/nvim /usr/bin/
+    # Configure my nvim configuration
+    mkdir -p ~/.config/nvim
+    curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz | tar xz -C ~/.config/ --strip-components=2 toolbox-main/nvim		
+    ;
+	*)
+		echo "Unsupported operating system: $os"
+		exit 1
+		;;
+	esac
 }
 
 main() {
@@ -35,7 +57,7 @@ main() {
 		nvim
 		;;
 	*)
-		echo "Usage: $0 {mac|nvim}"
+		echo "Usage: $0 {mac|nvim {debian|ubuntu}}"
 		exit 1
 		;;
 	esac

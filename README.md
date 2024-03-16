@@ -3,11 +3,14 @@
 Mac setup:
 curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
 
-Nvim setup:
-curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim
+Nvim standalone setup:
+curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian|ubuntu
 
 
-# Documentation
+# Neovim 
+
+## Docker
+
 
 Neovim template: https://www.lazyvim.org/keymaps
 
