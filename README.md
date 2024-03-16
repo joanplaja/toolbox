@@ -14,7 +14,6 @@ Ubuntu/Debian
 
 ## Docker
 
-
 Neovim template: https://www.lazyvim.org/keymaps
 
 ## key mappings
