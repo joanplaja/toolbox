@@ -1,10 +1,15 @@
-brew install ansible
+# Installation
 
+Mac setup:
+curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
+
+Nvim setup:
+curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim
+
+
+# Documentation
 
 Neovim template: https://www.lazyvim.org/keymaps
-
-Link repository configuration to computer:
-ln -s ~/Repos/joanplaja/cli-toolbox/nvim ~/.config/nvim
 
 | Key Binding     | Action Description                                  |
 |-----------------|-----------------------------------------------------|
