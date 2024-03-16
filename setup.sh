@@ -39,7 +39,7 @@ nvim() {
 		mv build/bin/nvim /usr/bin/
 		# Configure my nvim configuration
 		mkdir -p ~/.config/nvim
-		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz | tar xz -C ~/.config/ --strip-components=2 toolbox-main/nvim
+		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz | tar xz -C ~/.config/nvim --strip-components=2 toolbox-main/nvim
 		;;
 	*)
 		echo "Unsupported operating system: $os"
