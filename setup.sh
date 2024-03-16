@@ -19,7 +19,7 @@ mac() {
 	# Execute Ansible playbook
 	ansible-playbook -vvv computer.yml --check
 
-	rm -rf ~/Downloads/toolbox/toolbox-main
+	rm -rf ~/Downloads/toolbox
 }
 
 nvim() {
