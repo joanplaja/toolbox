@@ -10,5 +10,7 @@ vim.api.nvim_set_keymap("n", "<leader>tl", ":vsplit | terminal<CR>", { noremap =
 vim.api.nvim_set_keymap("n", "<leader>tj", ":split | terminal<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>tk", ":above split | terminal<CR>", { noremap = true })
 
---do not copy on delete
-vim.o.clipboard = ""
+-- Remap dd to _dd to avoid cutting when deleting
+vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true, silent = true })
