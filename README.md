@@ -33,7 +33,15 @@ Ubuntu:
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  leder + w + (h\|j\|k\|l) | Move to (left\|top\|bottom\|down) windows |
+|  leder + w + (h\|j\|k\|l) | Move to (left\|top\|bottom\|right) windows |
+
+### Terminal
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+|  leder + t + (j\|k\|l) | Open terminal on (top\|bottom\|right) windows |
+
+
 
 ### Files and folders
 
