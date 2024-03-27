@@ -24,6 +24,7 @@ grep_cheatsheet() {
 
 # Function to display redis commands cheat sheet
 redis_cheatsheet() {
+	echo "redis-cli -h HOST_NAME - Connecting with cli to redis"
 	echo "MONITOR - Realtime information about operations"
 	echo "INFO keyspace - Get databases and its information"
 	echo "SELECT database - Select a database to work on"
