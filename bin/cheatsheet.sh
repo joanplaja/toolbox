@@ -42,11 +42,24 @@ linux_cheatsheet() {
 
 }
 
+kubernetes_cheatsheet() {
+	case "$1" in
+	troubleshoot)
+		echo "Useful troubleshooting paths"
+		;;
+	*)
+		echo "Usage: cheat kubernetes {troubleshoot}"
+		;;
+	esac
+
+}
+
 # Main function
 cheat() {
 	case "$1" in
 	linux)
-		linux_cheatsheet $2
+		shift
+		linux_cheatsheet "$@"
 		;;
 	git)
 		git_cheatsheet
@@ -54,8 +67,12 @@ cheat() {
 	redis)
 		redis_cheatsheet
 		;;
+	kubernetes)
+		shift
+		kubernetes_cheatsheet "$@"
+		;;
 	*)
-		echo "Usage: $0 {linux{debug|grep|network}|git|redis}"
+		echo "Usage: $0 {linux{debug|grep|network}|git|redis|kubernetes{troubleshoot}}"
 		;;
 	esac
 }
