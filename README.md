@@ -4,6 +4,28 @@
 curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
 ```
 
+# Cheat command
+
+## Installation
+
+```
+curl -o cheatsheet.sh https://raw.githubusercontent.com/joanplaja/toolbox/main/bin/cheatsheet.sh && source cheatsheet.sh
+ ```
+
+## Example
+
+```
+cheat redis
+
+redis-cli -h HOST_NAME - Connecting with cli to redis
+MONITOR - Realtime information about operations
+INFO keyspace - Get databases and its information
+SELECT database - Select a database to work on
+KEYS * - List all keys on the current database
+FLUSHDB - Delete all keys on the current database
+
+```
+
 # Neovim 
 
 Neovim template https://www.lazyvim.org/ adapted to my style.
@@ -28,6 +50,12 @@ Ubuntu:
 \+ : Mandatory key combination
 
 \*: Optional key combination
+
+### Buffers 
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+| -  | - |
 
 ### Windows
 
@@ -66,6 +94,7 @@ Ubuntu:
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
 | tab * (h\|l)     | Switch tab (left\|right)                    |
+| leader + b + d     | Delete tab                    |
 
 ### Cursor
 
