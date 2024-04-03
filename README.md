@@ -51,6 +51,13 @@ Ubuntu:
 
 \*: Optional key combination
 
+### Programming
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+| leader + g + d  | Go to definition |
+
+
 ### Buffers 
 
 | key/command     | action description                                  |
