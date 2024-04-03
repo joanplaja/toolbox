@@ -88,6 +88,7 @@ Ubuntu:
 | m     | Move   |
 | o     | Order                     |
 | i     | Info                     |
+| shift + h     | Show hidden files                     |
 
 ### Tabs
 
