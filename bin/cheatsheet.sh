@@ -54,6 +54,14 @@ kubernetes_cheatsheet() {
 
 }
 
+ssh_cheatsheet() {
+	echo "ssh-keygen -t ed25519 -C \"email@example.com\" -- Create ssh key with ed25519 algorithm"
+	echo "ssh-keygen -t rsa -b 4096 -C \"email@example.com\" -- Create ssh key with rsa algorithm"
+	echo "ssh -i ~/.ssh/private.pem user@host -- SSH connect specifying ssh key"
+	echo "rsync -avz -e \"ssh -i ~/.ssh/private.pem\" -- ~/local/path user@host:/remote/path/ -- Copy files between local and remote using rysnc and ssh"
+	echo "scp -i ~/.ssh/private.pem /path/to/local/file user@host:/remote/path/ -- Copy files between local and remote using scp"
+}
+
 # Main function
 cheat() {
 	case "$1" in
@@ -71,8 +79,11 @@ cheat() {
 		shift
 		kubernetes_cheatsheet "$@"
 		;;
+	ssh)
+		ssh_cheatsheet
+		;;
 	*)
-		echo "Usage: $0 {linux{debug|grep|network}|git|redis|kubernetes{troubleshoot}}"
+		echo "Usage: $0 {linux{debug|grep|network}|git|redis|kubernetes{troubleshoot}|ssh}"
 		;;
 	esac
 }
