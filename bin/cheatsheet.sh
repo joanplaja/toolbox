@@ -50,6 +50,7 @@ kubernetes_cheatsheet() {
 	search)
 		echo "k config view -o=jsonpath='{.users[?(@.name==\"aws.user\")]}'"
 		echo "k get persistentvolume -o custom-columns='NAME:.metadata.name,CAPACITY:.spec.capacity.storage' --sort-by=.spec.capacity.storage"
+		echo "k get nodes -o json | jq 'paths | select(.[-1] == \"osImage\")' -- Returns path to specific key"
 		;;
 	*)
 		echo "Usage: cheat kubernetes {troubleshoot|search}"
@@ -64,6 +65,11 @@ ssh_cheatsheet() {
 	echo "ssh -i ~/.ssh/private.pem user@host -- SSH connect specifying ssh key"
 	echo "rsync -avz -e \"ssh -i ~/.ssh/private.pem\" -- ~/local/path user@host:/remote/path/ -- Copy files between local and remote using rysnc and ssh"
 	echo "scp -i ~/.ssh/private.pem /path/to/local/file user@host:/remote/path/ -- Copy files between local and remote using scp"
+}
+
+jq_cheatsheet() {
+	echo "jq 'paths | select(.[-1] == \"osImage\")' -- Find a path to a json key example:"
+	echo "k get nodes -o json | jq 'paths | select(.[-1] == \"osImage\")'"
 }
 
 # Main function
@@ -86,8 +92,11 @@ cheat() {
 	ssh)
 		ssh_cheatsheet
 		;;
+	jq)
+		jq_cheatsheet
+		;;
 	*)
-		echo "Usage: $0 {linux|git|redis|kubernetes|ssh}"
+		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|jq}"
 		;;
 	esac
 }
