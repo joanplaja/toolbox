@@ -59,7 +59,12 @@ ssh_cheatsheet() {
 	echo "ssh-keygen -t rsa -b 4096 -C \"email@example.com\" -- Create ssh key with rsa algorithm"
 	echo "ssh -i ~/.ssh/private.pem user@host -- SSH connect specifying ssh key"
 	echo "rsync -avz -e \"ssh -i ~/.ssh/private.pem\" -- ~/local/path user@host:/remote/path/ -- Copy files between local and remote using rysnc and ssh"
-	echo "scp -i ~/.ssh/private.pem /path/to/local/file user@host:/remote/path/ -- Copy files between local and remote using scp"
+	echo "scp -i ~/.ssh/private.pem /path/to/local/file user@host:/remote/path/ -- Copy files between local and remote using s"
+}
+
+postgres_cheatsheet() {
+	echo "50 bigger tables size query:"
+	echo "SELECT relname AS "relation", pg_size_pretty(pg_total_relation_size(C.oid)) AS "total_size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN ('pg_catalog', 'information_schema') AND C.relkind <> 'i' AND nspname !~ '^pg_toast' ORDER BY pg_total_relation_size(C.oid) DESC LIMIT 50;"
 }
 
 # Main function
@@ -82,8 +87,11 @@ cheat() {
 	ssh)
 		ssh_cheatsheet
 		;;
+	postgres)
+		postgres_cheatsheet
+		;;
 	*)
-		echo "Usage: $0 {linux{debug|grep|network}|git|redis|kubernetes{troubleshoot}|ssh}"
+		echo "Usage: $0 {linux{debug|grep|network}|git|redis|kubernetes{troubleshoot}|ssh|postgres}"
 		;;
 	esac
 }
