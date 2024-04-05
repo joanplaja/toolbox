@@ -47,8 +47,12 @@ kubernetes_cheatsheet() {
 	troubleshoot)
 		echo "Useful troubleshooting paths"
 		;;
+	search)
+		echo "k config view -o=jsonpath='{.users[?(@.name==\"aws.user\")]}'"
+		echo "k get persistentvolume -o custom-columns='NAME:.metadata.name,CAPACITY:.spec.capacity.storage' --sort-by=.spec.capacity.storage"
+		;;
 	*)
-		echo "Usage: cheat kubernetes {troubleshoot}"
+		echo "Usage: cheat kubernetes {troubleshoot|search}"
 		;;
 	esac
 
@@ -83,7 +87,7 @@ cheat() {
 		ssh_cheatsheet
 		;;
 	*)
-		echo "Usage: $0 {linux{debug|grep|network}|git|redis|kubernetes{troubleshoot}|ssh}"
+		echo "Usage: $0 {linux|git|redis|kubernetes|ssh}"
 		;;
 	esac
 }
