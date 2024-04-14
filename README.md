@@ -70,11 +70,15 @@ brew install gnu-sed add with ansible
 | leader + g + d  | Go to definition |
 
 
-### Buffers 
+### Buffers
 
-| key/command     | action description                                  |
-|-----------------|-----------------------------------------------------|
-| -  | - |
+| Key/Command       | Action Description                                  |
+|-------------------|-----------------------------------------------------|
+| :ls               | List all open buffers                               |
+| :bnext            | Switch to the next buffer                           |
+| :bprev            | Switch to the previous buffer                       |
+| :bd               | Close the current buffer                            |
+| :w                | Save changes to the current buffer                  |
 
 ### Windows
 
