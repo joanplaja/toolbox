@@ -59,6 +59,7 @@ brew install gnu-sed add with ansible
 |-----------------|-----------------------------------------------------|
 | leader + S   | Search and replace text https://github.com/nvim-pack/nvim-spectre |
 | (visual/normal) leader + s + w  | Search and replace current word |
+| leader + c + p  | Copy current file relative path ( useful for below search and replace, if only need to replace current directory) |
 | leader + s + p  | Search and replace on current file |
 | leader + R  | Replace all |
 

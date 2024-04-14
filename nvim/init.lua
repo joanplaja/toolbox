@@ -15,6 +15,26 @@ vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true, silent = true })
 
+-- Searching and replace
+-- Define a Lua function to copy the current relative path to the clipboard
+local function copy_relative_path_to_clipboard()
+  -- Get the relative path of the current file
+  local relative_path = vim.fn.expand("%:p")
+  -- Copy the relative path to the clipboard
+  vim.fn.setreg("+", relative_path)
+  -- Display a message indicating that the path has been copied
+  print("Relative path copied to clipboard: " .. relative_path)
+end
+-- Expose the function globally so it can be accessed by the key mapping
+_G.copy_relative_path_to_clipboard = copy_relative_path_to_clipboard
+-- Map a key combination to the function
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>cp",
+  ":lua copy_relative_path_to_clipboard()<CR>",
+  { noremap = true, silent = true }
+)
+
 -- Toggle Spectre
 vim.api.nvim_set_keymap(
   "n",
