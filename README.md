@@ -47,9 +47,21 @@ Ubuntu:
 
 ## key mappings
 
+brew install gnu-sed add with ansible
+
 \+ : Mandatory key combination
 
 \*: Optional key combination
+
+### Text manipulation 
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+| leader + S   | Search and replace text https://github.com/nvim-pack/nvim-spectre |
+| (visual/normal) leader + s + w  | Search and replace current word |
+| leader + s + p  | Search and replace on current file |
+| leader + R  | Replace all |
+
 
 ### Programming
 

@@ -14,3 +14,35 @@ vim.api.nvim_set_keymap("n", "<leader>tk", ":above split | terminal<CR>", { nore
 vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true, silent = true })
+
+-- Toggle Spectre
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>S",
+  "<cmd>lua require('spectre').toggle()<CR>",
+  { noremap = true, desc = "Toggle Spectre" }
+)
+
+-- Search current word (normal mode)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>sw",
+  "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+  { noremap = true, desc = "Search current word" }
+)
+
+-- Search current word (visual mode)
+vim.api.nvim_set_keymap(
+  "v",
+  "<leader>sw",
+  "<esc><cmd>lua require('spectre').open_visual()<CR>",
+  { noremap = true, desc = "Search current word" }
+)
+
+-- Search on current file
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>sp",
+  "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+  { noremap = true, desc = "Search on current file" }
+)
