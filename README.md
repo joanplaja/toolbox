@@ -47,7 +47,13 @@ Ubuntu:
 
 ## key mappings
 
-brew install gnu-sed add with ansible
+brew install gnu-sed add with ansible ( used for search and replace)
+
+copilot needs node install version
+from: https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+nvm install 16
+Copilot auth ( to setup )
+then ready
 
 \+ : Mandatory key combination
 
