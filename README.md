@@ -57,11 +57,15 @@ brew install gnu-sed add with ansible
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-| leader + S   | Search and replace text https://github.com/nvim-pack/nvim-spectre |
-| (visual/normal) leader + s + w  | Search and replace current word |
-| leader + c + p  | Copy current file relative path ( useful for below search and replace, if only need to replace current directory) |
 | leader + s + p  | Search and replace on current file |
-| leader + R  | Replace all |
+| 0 (first position) + gg (first line) + visual + G  | Select all |
+| leader + s + A  | Select all |
+
+### Copying
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+| yyp     | copy current line to below                   |
 
 
 ### Programming
@@ -76,9 +80,9 @@ brew install gnu-sed add with ansible
 | Key/Command       | Action Description                                  |
 |-------------------|-----------------------------------------------------|
 | :ls               | List all open buffers                               |
-| :bnext            | Switch to the next buffer                           |
-| :bprev            | Switch to the previous buffer                       |
-| :bd               | Close the current buffer                            |
+| leader + b + n ( same as :bnext )           | Switch to the next buffer                           |
+| leader + b + p ( same as :bprev )           | Switch to the previous buffer                       |
+| leader + b + d ( same as :bd )               | Close the current buffer                            |
 | :w                | Save changes to the current buffer                  |
 
 ### Windows
@@ -94,13 +98,13 @@ brew install gnu-sed add with ansible
 |  leder + t + (j\|k\|l) | Open terminal on (top\|bottom\|right) windows |
 
 
-
 ### Files and folders
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
 |  leader + e   | Open file explorer                     |
 |  :edit $filename   | Creates/Opens files                     |
+| leader + c + p  | Copy current file relative path  |
 
 
 ### File explorer commands ( leader + e)
@@ -126,9 +130,3 @@ brew install gnu-sed add with ansible
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
 |      |              |
-
-### Copying
-
-| key/command     | action description                                  |
-|-----------------|-----------------------------------------------------|
-| yyp     | copy current line to below                   |

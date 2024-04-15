@@ -15,9 +15,14 @@ vim.api.nvim_set_keymap("n", "dd", '"_dd', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "x", '"_x', { noremap = true, silent = true })
 
+-- Text selection
+
+-- Define custom key mapping for selecting all text from beginning of file
+vim.api.nvim_set_keymap("n", "<leader>sA", "0ggVG", { noremap = true, desc = "Select all" })
+
 -- Searching and replace
 -- Define a Lua function to copy the current relative path to the clipboard
-local function copy_relative_path_to_clipboard()
+local function copy_path_to_clipboard()
   -- Get the relative path of the current file
   local relative_path = vim.fn.expand("%:p")
   -- Copy the relative path to the clipboard
@@ -26,38 +31,9 @@ local function copy_relative_path_to_clipboard()
   print("Relative path copied to clipboard: " .. relative_path)
 end
 -- Expose the function globally so it can be accessed by the key mapping
-_G.copy_relative_path_to_clipboard = copy_relative_path_to_clipboard
+_G.copy_path_to_clipboard = copy_path_to_clipboard
 -- Map a key combination to the function
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>cp",
-  ":lua copy_relative_path_to_clipboard()<CR>",
-  { noremap = true, silent = true }
-)
-
--- Toggle Spectre
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>S",
-  "<cmd>lua require('spectre').toggle()<CR>",
-  { noremap = true, desc = "Toggle Spectre" }
-)
-
--- Search current word (normal mode)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>sw",
-  "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-  { noremap = true, desc = "Search current word" }
-)
-
--- Search current word (visual mode)
-vim.api.nvim_set_keymap(
-  "v",
-  "<leader>sw",
-  "<esc><cmd>lua require('spectre').open_visual()<CR>",
-  { noremap = true, desc = "Search current word" }
-)
+vim.api.nvim_set_keymap("n", "<leader>cp", ":lua copy_path_to_clipboard()<CR>", { noremap = true, silent = true })
 
 -- Search on current file
 vim.api.nvim_set_keymap(
@@ -66,3 +42,9 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
   { noremap = true, desc = "Search on current file" }
 )
+
+-- Buffers
+-- Switch to the next buffer
+vim.api.nvim_set_keymap("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true })
+-- Switch to the previous buffer
+vim.api.nvim_set_keymap("n", "<leader>bp", ":bprev<CR>", { noremap = true, silent = true })
