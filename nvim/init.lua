@@ -44,7 +44,3 @@ vim.api.nvim_set_keymap(
 )
 
 -- Buffers
--- Switch to the next buffer
-vim.api.nvim_set_keymap("n", "<leader>bn", ":bnext<CR>", { noremap = true, silent = true })
--- Switch to the previous buffer
-vim.api.nvim_set_keymap("n", "<leader>bp", ":bprev<CR>", { noremap = true, silent = true })

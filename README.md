@@ -86,8 +86,8 @@ then ready
 | Key/Command       | Action Description                                  |
 |-------------------|-----------------------------------------------------|
 | :ls               | List all open buffers                               |
-| leader + b + n ( same as :bnext )           | Switch to the next buffer                           |
-| leader + b + p ( same as :bprev )           | Switch to the previous buffer                       |
+| shift + h           | Previous buffer                         |
+| shift + l           | Next buffer                   |
 | leader + b + d ( same as :bd )               | Close the current buffer                            |
 | :w                | Save changes to the current buffer                  |
 
