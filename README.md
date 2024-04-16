@@ -59,6 +59,17 @@ then ready
 
 \*: Optional key combination
 
+### Cursor
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+|  0    |   Start of line           |
+|  $    |   End of line           |
+|  gg    |   Beginning of file           |
+|  G   |   End of file           |
+|  w   |   Next word           |
+|  b   |   Previous word           |
+
 ### Text manipulation 
 
 | key/command     | action description                                  |
@@ -130,9 +141,3 @@ then ready
 |-----------------|-----------------------------------------------------|
 | tab * (h\|l)     | Switch tab (left\|right)                    |
 | leader + b + d     | Delete tab                    |
-
-### Cursor
-
-| key/command     | action description                                  |
-|-----------------|-----------------------------------------------------|
-|      |              |
