@@ -16,6 +16,9 @@ redis_cheatsheet() {
 
 linux_cheatsheet() {
 	case "$1" in
+	rsync)
+		echo "rsync -av --exclude='.git' --exclude='.github' . ../target-dir"
+		;;
 	debug)
 		echo "strace (https://strace.io/)"
 		echo "It is used to monitor and tamper with interactions between processes and the Linux kernel, which include system calls, signal deliveries, and changes of process state."
@@ -36,7 +39,7 @@ linux_cheatsheet() {
 		echo "traceroute <host> - Trace route to a host"
 		;;
 	*)
-		echo "Usage: cheat linux {debug|grep|network}"
+		echo "Usage: cheat linux {debug|grep|network|rsync}"
 		;;
 	esac
 
