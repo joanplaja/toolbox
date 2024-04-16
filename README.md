@@ -90,6 +90,7 @@ then ready
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
 | leader + g + d  | Go to definition |
+| K  | Hover to show information (ex. function description)   |
 
 
 ### Buffers
