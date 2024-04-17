@@ -87,6 +87,10 @@ postgres_cheatsheet() {
 	echo
 	echo "Manage users/permissions/databases:"
 	echo
+	echo "\l -- List databases"
+	echo "\d(n|t|u|p|v|f|i|b|x) -- List (schemas|tables|users|privileges|views|functions|indexes|tables|extensions)"
+	echo "\d table_name -- Describe specific table"
+	echo "\c database_name -- Connect to database"
 	echo "CREATE USER user with SUPERUSER encrypted password 'user';"
 	echo "CREATE DATABASE database_name;"
 	echo "GRANT ALL PRIVILEGES ON DATABASE database_name TO user;"
