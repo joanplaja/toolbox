@@ -71,8 +71,25 @@ ssh_cheatsheet() {
 }
 
 postgres_cheatsheet() {
-	echo "50 bigger tables size query:"
+	echo "Connecting with psql:"
+	echo
+	echo "The following env variables are used by psql to connect:"
+	echo "export PGUSER=user"
+	echo "export PGPASSWORD=password"
+	echo "export PGHOST=host"
+	echo
+	echo "psql -d database_name"
+	echo "psql -d database_name -c 'SELECT * FROM table_name'"
+	echo
+	echo "Database size:"
+	echo
 	echo "SELECT relname AS "relation", pg_size_pretty(pg_total_relation_size(C.oid)) AS "total_size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN ('pg_catalog', 'information_schema') AND C.relkind <> 'i' AND nspname !~ '^pg_toast' ORDER BY pg_total_relation_size(C.oid) DESC LIMIT 50;"
+	echo
+	echo "Manage users/permissions/databases:"
+	echo
+	echo "CREATE USER user with SUPERUSER encrypted password 'user';"
+	echo "CREATE DATABASE database_name;"
+	echo "GRANT ALL PRIVILEGES ON DATABASE database_name TO user;"
 }
 
 mysql_cheatsheet() {
