@@ -100,9 +100,16 @@ postgres_cheatsheet() {
 	echo "GRANT pg_signal_backend TO user; -- Allow sending singals to the user"
 	echo "GRANT ALL PRIVILEGES ON DATABASE database_name TO user;"
 	echo
-	echo "SELECT 'ALTER TABLE '|| schemaname || '."' || tablename ||'" OWNER TO newuser;'"
-	echo "  FROM pg_tables WHERE NOT schemaname IN ('pg_catalog', 'information_schema')"
-	echo "  ORDER BY schemaname, tablename;"
+	echo "Change owner on tables"
+	echo "SELECT 'ALTER TABLE '|| schemaname || '.' || tablename ||' OWNER TO newuser;' FROM pg_tables WHERE NOT schemaname IN ('pg_catalog', 'information_schema');"
+	echo "\gexec -- executes output of previous command"
+	echo
+	echo "Change owner on schemas"
+	echo "SELECT 'ALTER SCHEMA ' || schema_name || ' OWNER TO newuser;' FROM information_schema.schemata WHERE schema_name NOT IN ('pg_catalog', 'information_schema');"
+	echo "\gexec -- executes output of previous command"
+	echo
+	echo "Change owner on views"
+	echo "SELECT 'ALTER VIEW ' || table_schema || '.' || table_name ||' OWNER TO newuser;' FROM information_schema.views WHERE table_schema NOT IN ('pg_catalog', 'information_schema');"
 	echo "\gexec -- executes output of previous command"
 }
 
