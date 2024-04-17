@@ -111,6 +111,10 @@ postgres_cheatsheet() {
 	echo "Change owner on views"
 	echo "SELECT 'ALTER VIEW ' || table_schema || '.' || table_name ||' OWNER TO newuser;' FROM information_schema.views WHERE table_schema NOT IN ('pg_catalog', 'information_schema');"
 	echo "\gexec -- executes output of previous command"
+	echo
+	echo "Change owner of sequences"
+	echo "SELECT 'ALTER SEQUENCE ' || sequence_schema || '.' || sequence_name || ' OWNER TO newuser;' FROM information_schema.sequences WHERE sequence_schema NOT IN ('pg_catalog', 'information_schema');"
+	echo "\gexec -- executes output of previous command"
 }
 
 mysql_cheatsheet() {
