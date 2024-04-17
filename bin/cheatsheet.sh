@@ -99,6 +99,11 @@ postgres_cheatsheet() {
 	echo "ALTER USER user WITH CREATEDB; -- Allow create databases"
 	echo "GRANT pg_signal_backend TO user; -- Allow sending singals to the user"
 	echo "GRANT ALL PRIVILEGES ON DATABASE database_name TO user;"
+	echo
+	echo "SELECT 'ALTER TABLE '|| schemaname || '."' || tablename ||'" OWNER TO newuser;'"
+	echo "  FROM pg_tables WHERE NOT schemaname IN ('pg_catalog', 'information_schema')"
+	echo "  ORDER BY schemaname, tablename;"
+	echo "\gexec -- executes output of previous command"
 }
 
 mysql_cheatsheet() {
