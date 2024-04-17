@@ -91,9 +91,13 @@ postgres_cheatsheet() {
 	echo "\d(n|t|u|p|v|f|i|b|x) -- List (schemas|tables|users|privileges|views|functions|indexes|tables|extensions)"
 	echo "\d table_name -- Describe specific table"
 	echo "\c database_name -- Connect to database"
-	echo "CREATE USER user with SUPERUSER encrypted password 'user';"
-	echo "CREATE DATABASE database_name;"
-	echo "CREATE DATABASE database_name WITH OWNER user;"
+	echo
+	echo "CREATE USER user with encrypted password '';"
+	echo "GRANT user TO superuser; -- Allow permission to superuser to create database as owner user"
+	echo "CREATE DATABASE database_name with OWNER user;"
+	echo "REVOKE user FROM superuser;"
+	echo "ALTER USER user WITH CREATEDB; -- Allow create databases"
+	echo "GRANT pg_signal_backend TO user; -- Allow sending singals to the user"
 	echo "GRANT ALL PRIVILEGES ON DATABASE database_name TO user;"
 }
 
