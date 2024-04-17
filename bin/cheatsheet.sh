@@ -93,6 +93,7 @@ postgres_cheatsheet() {
 	echo "\c database_name -- Connect to database"
 	echo "CREATE USER user with SUPERUSER encrypted password 'user';"
 	echo "CREATE DATABASE database_name;"
+	echo "CREATE DATABASE database_name WITH OWNER user;"
 	echo "GRANT ALL PRIVILEGES ON DATABASE database_name TO user;"
 }
 
