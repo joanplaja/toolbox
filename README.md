@@ -77,6 +77,8 @@ then ready
 | leader + s + p  | Search and replace on current file |
 | 0 (first position) + gg (first line) + visual + G  | Select all |
 | leader + s + A  | Select all |
+| (visual mode) + gsa + ( (,[,",' .. ) | Add surronding text hola -> (hola) | 
+
 
 ### Copying
 
@@ -125,10 +127,12 @@ then ready
 | leader + c + p  | Copy current file relative path  |
 
 
-### File explorer commands ( leader + e)
+### File explorer (neotree) commands ( leader + e)
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
+| s     | Split file vertically                     |
+| shift + s     | Split file horizontal                     |
 | a     | Add files and folders                     |
 | c     | Copy                     |
 | m     | Move   |
