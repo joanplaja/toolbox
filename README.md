@@ -77,6 +77,7 @@ then ready
 | leader + s + p  | Search and replace on current file |
 | 0 (first position) + gg (first line) + visual + G  | Select all |
 | leader + s + A  | Select all |
+| (visual mode) + leader + u/U  | Transform selection to lowercase/uppercase |
 | (visual mode) + gsa + ( (,[,",' .. ) | Add surronding text hola -> (hola) | 
 
 
