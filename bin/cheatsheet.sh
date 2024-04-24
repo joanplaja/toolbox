@@ -93,6 +93,7 @@ postgres_cheatsheet() {
 	echo "\c database_name -- Connect to database"
 	echo
 	echo "ALTER SCEMA schema_name RENAME to new_schema_name;"
+	echo "ALTER TABLE table_name ADD COLUMN date DATE;"
 	echo
 	echo "CREATE USER user with encrypted password '';"
 	echo "GRANT user TO superuser; -- Allow permission to superuser to create database as owner user"
