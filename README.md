@@ -74,7 +74,7 @@ then ready
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-| leader + s + p  | Search and replace on current file |
+| leader + s + p  | Search and replace on current file (leader + i: toggle ignore case) |
 | 0 (first position) + gg (first line) + visual + G  | Select all |
 | leader + s + A  | Select all |
 | (visual mode) + leader + u/U  | Transform selection to lowercase/uppercase |
