@@ -59,6 +59,14 @@ then ready
 
 \*: Optional key combination
 
+### Search 
+
+| key/command     | action description                                  |
+|-----------------|-----------------------------------------------------|
+|  leader + s + g    |   Search on all files as a grep           |
+|  leader + f + f    |   Find files by name           |
+
+
 ### Cursor
 
 | key/command     | action description                                  |
