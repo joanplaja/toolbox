@@ -119,6 +119,7 @@ then ready
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
+|  ctrl + w + (H|L) | Move current window to (left|right) window |
 |  leder + w + (h\|j\|k\|l) | Move to (left\|top\|bottom\|right) windows |
 
 ### Terminal
