@@ -1,7 +1,8 @@
 #!/bin/bash
 
 git_cheatsheet() {
-	echo "git reset --hard (HEAD~1|origin/develop) - Reset to (last commit|Origin branch)"
+	echo "git reset --hard (HEAD~1|origin/develop) - Reset without keeping the changes (last commit|Origin branch)"
+	echo "git reset --soft (HEAD~1|origin/develop) - Reset keeping the changes staged (last commit|Origin branch)"
 	echo "git revert (HEAD|(HEAD^|HEAD~N)..HEAD) - Revert (last commit|(last 2 commits|last N commits))"
 }
 
