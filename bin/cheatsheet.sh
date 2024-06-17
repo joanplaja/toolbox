@@ -100,6 +100,7 @@ postgres_cheatsheet() {
 	echo "DROP USER old_user;"
 	echo "GRANT user TO superuser; -- Allow permission to superuser to create database as owner user"
 	echo "CREATE DATABASE database_name with OWNER user;"
+	echo "ALTER DATABASE database_name OWNER TO owner;"
 	echo "REVOKE user FROM superuser;"
 	echo "ALTER USER user WITH CREATEDB; -- Allow create databases"
 	echo "GRANT pg_signal_backend TO user; -- Allow sending singals to the user"
