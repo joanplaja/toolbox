@@ -97,6 +97,7 @@ postgres_cheatsheet() {
 	echo "ALTER TABLE table_name ADD COLUMN date DATE;"
 	echo
 	echo "CREATE USER user with encrypted password '';"
+	echo "DROP USER old_user;"
 	echo "GRANT user TO superuser; -- Allow permission to superuser to create database as owner user"
 	echo "CREATE DATABASE database_name with OWNER user;"
 	echo "REVOKE user FROM superuser;"
