@@ -130,6 +130,12 @@ mysql_cheatsheet() {
 	echo
 	echo "Managing the database:"
 	echo
+	echo "SHOW DATABASES; -- List databases"
+	echo "SELECT user, host FROM mysql.user; -- List users"
+	echo
+	echo "DROP DATABASE database_name;"
+	echo "DROP USER 'username'@'host';"
+	echo
 	echo "CREATE USER 'user_name'@'%' IDENTIFIED BY 'password';"
 	echo "CREATE DATABASE database_name;"
 	echo "GRANT ALL PRIVILEGES ON database_name.* TO 'user_name'@'%';"
