@@ -68,7 +68,8 @@ ssh_cheatsheet() {
 	echo "ssh-keygen -t rsa -b 4096 -C \"email@example.com\" -- Create ssh key with rsa algorithm"
 	echo "ssh -i ~/.ssh/private.pem user@host -- SSH connect specifying ssh key"
 	echo "rsync -avz -e \"ssh -i ~/.ssh/private.pem\" -- ~/local/path user@host:/remote/path/ -- Copy files between local and remote using rysnc and ssh"
-	echo "scp -i ~/.ssh/private.pem /path/to/local/file user@host:/remote/path/ -- Copy files between local and remote using s"
+	echo "scp -i ~/.ssh/private.pem /path/to/local/file user@host:/remote/path/ -- Copy local file to remote"
+	echo "scp -i ~/.ssh/private.pem  user@host:/remote/path/ /path/to/local/file -- Copy remote file to local"
 }
 
 postgres_cheatsheet() {
