@@ -132,6 +132,8 @@ mysql_cheatsheet() {
 	echo
 	echo "SHOW DATABASES; -- List databases"
 	echo "SELECT user, host FROM mysql.user; -- List users"
+	echo "USE database_name; -- Select database"
+	echo "SHOW TABLES; -- List tables"
 	echo
 	echo "DROP DATABASE database_name;"
 	echo "DROP USER 'username'@'host';"
@@ -141,6 +143,29 @@ mysql_cheatsheet() {
 	echo "GRANT ALL PRIVILEGES ON database_name.* TO 'user_name'@'%';"
 	echo "FLUSH PRIVILEGES;"
 	echo
+}
+
+opensearch_cheatsheet() {
+	echo
+	echo "Managing indexs:"
+	echo
+	echo "List all indices:"
+	echo "GET _cat/indices?v"
+	echo
+	echo "Get stats for all indices:"
+	echo "GET _stats"
+	echo
+	echo "Get stats for a specific index:"
+	echo "GET index_name/_stats"
+	echo
+	echo "Delete an index:"
+	echo "DELETE index_name"
+	echo
+	echo "Create an index:"
+	echo "PUT index_name"
+	echo
+	echo "Get index mapping:"
+	echo "GET index_name/_mapping"
 }
 
 jq_cheatsheet() {
@@ -174,11 +199,14 @@ cheat() {
 	mysql)
 		mysql_cheatsheet
 		;;
+	opensearch)
+		opensearch_cheatsheet
+		;;
 	jq)
 		jq_cheatsheet
 		;;
 	*)
-		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|mysql|jq}"
+		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq}"
 		;;
 	esac
 }
