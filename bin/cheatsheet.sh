@@ -144,6 +144,11 @@ mysql_cheatsheet() {
 	echo "GRANT ALL PRIVILEGES ON database_name.* TO 'user_name'@'%';"
 	echo "FLUSH PRIVILEGES;"
 	echo
+	echo "Backup and Restore:"
+	echo
+	echo "mysqldump -u \$USER_NAME -p database_name > backup.sql -- Backup database"
+	echo "mysql -u \$USER_NAME -p database_name < backup.sql -- Restore database"
+	echo
 }
 
 opensearch_cheatsheet() {
