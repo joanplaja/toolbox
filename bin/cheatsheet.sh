@@ -7,12 +7,24 @@ git_cheatsheet() {
 }
 
 redis_cheatsheet() {
-	echo "redis-cli -h HOST_NAME - Connecting with cli to redis"
-	echo "MONITOR - Realtime information about operations"
-	echo "INFO keyspace - Get databases and its information"
-	echo "SELECT database - Select a database to work on"
-	echo "KEYS * - List all keys on the current database"
-	echo "FLUSHDB - Delete all keys on the current database"
+	echo "redis-cli -h host_name - connecting with cli to redis"
+	echo "monitor - realtime information about operations"
+	echo "info keyspace - get databases and its information"
+	echo "select database - select a database to work on"
+	echo "keys * - list all keys on the current database"
+	echo "flushdb - delete all keys on the current database"
+}
+
+docker_cheatsheet() {
+	echo "Docker and Docker Compose File Copying Commands:"
+	echo ""
+	echo "Docker Commands:"
+	echo "docker cp container_id:/path/to/file /host/path - Copy file from container to host"
+	echo "docker cp /host/path container_id:/path/to/file - Copy file from host to container"
+	echo ""
+	echo "Docker Compose Commands:"
+	echo "docker compose cp service_name:/path/to/container/file /host/path - Copy file from container to host"
+	echo "docker compose cp /host/path service_name:/path/to/container/file - Copy file from host to container"
 }
 
 linux_cheatsheet() {
@@ -218,8 +230,11 @@ cheat() {
 	jq)
 		jq_cheatsheet
 		;;
+	docker)
+		docker_cheatsheet
+		;;
 	*)
-		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq}"
+		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker}"
 		;;
 	esac
 }
