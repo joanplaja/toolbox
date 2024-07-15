@@ -39,8 +39,15 @@ linux_cheatsheet() {
 		echo "netstat - Display network connections, routing tables, etc."
 		echo "traceroute <host> - Trace route to a host"
 		;;
+	zip)
+		echo "zip archive.zip file1 file2 - Create a zip archive containing file1 and file2"
+		echo "zip -r archive.zip directory - Recursively zip the contents of directory"
+		echo "unzip archive.zip - Extract the contents of a zip archive"
+		echo "unzip archive.zip -d target_dir - Extract the contents of a zip archive to target_dir"
+		echo "zip -u archive.zip file1 - Update file1 in the zip archive"
+		;;
 	*)
-		echo "Usage: cheat linux {debug|grep|network|rsync}"
+		echo "Usage: cheat linux {debug|grep|network|rsync|zip}"
 		;;
 	esac
 
