@@ -62,7 +62,24 @@ linux_cheatsheet() {
 		echo "Usage: cheat linux {debug|grep|network|rsync|zip}"
 		;;
 	esac
+}
 
+aws_cheatsheet() {
+	case "$1" in
+	s3)
+		echo "Upload/Download:"
+		echo "aws s3 cp s3://bucket-name/file.txt /local/path - Copy file from S3 to local"
+		echo "aws s3 cp /local/path/file.txt s3://bucket-name/ - Copy file from local to S3"
+		echo "aws s3 cp s3://bucket-name/folder/ /local/folder/ --recursive - Copy folder from S3 to local"
+		echo "aws s3 cp /local/folder/ s3://bucket-name/folder/ --recursive - Copy folder from local to S3"
+		"List:"
+		echo "aws s3 ls s3://bucket-name/ - List objects in a bucket"
+		echo "aws s3 ls s3://bucket-name/folder/ - List objects in a specific folder"
+		;;
+	*)
+		echo "Usage: cheat aws {s3}"
+		;;
+	esac
 }
 
 kubernetes_cheatsheet() {
@@ -233,8 +250,12 @@ cheat() {
 	docker)
 		docker_cheatsheet
 		;;
+	aws)
+		shift
+		aws_cheatsheet "$@"
+		;;
 	*)
-		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker}"
+		echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws}"
 		;;
 	esac
 }
