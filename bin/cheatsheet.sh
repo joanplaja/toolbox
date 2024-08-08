@@ -158,6 +158,12 @@ postgres_cheatsheet() {
 	echo "Change owner of sequences"
 	echo "SELECT 'ALTER SEQUENCE ' || sequence_schema || '.' || sequence_name || ' OWNER TO newuser;' FROM information_schema.sequences WHERE sequence_schema NOT IN ('pg_catalog', 'information_schema');"
 	echo "\gexec -- executes output of previous command"
+	echo
+	echo "View locks not granted"
+	echo "SELECT pid, locktype, relation::regclass, mode, granted FROM pg_locks WHERE NOT granted;"
+	echo
+	echo "Terminate process"
+	echo "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid = <blocked_pid>;"
 }
 
 mysql_cheatsheet() {
