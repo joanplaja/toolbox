@@ -165,6 +165,64 @@ postgres_cheatsheet() {
   echo
   echo "Terminate process"
   echo "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid = <blocked_pid>;"
+  echo
+  echo "Change sequence last value"
+  echo "ALTER SEQUENCE sequence_name RESTART WITH 1001;"
+}
+
+sql_cheatsheet() {
+  echo "SQL Commands Cheat Sheet:"
+  echo
+  echo "SELECT:"
+  echo "SELECT column1, column2 FROM table_name WHERE condition;"
+  echo "-- Example:"
+  echo "SELECT name, age FROM users WHERE age > 30;"
+  echo
+  echo "INSERT:"
+  echo "INSERT INTO table_name (column1, column2) VALUES (value1, value2);"
+  echo "-- Example:"
+  echo "INSERT INTO users (name, age) VALUES ('John Doe', 28);"
+  echo
+  echo "UPDATE:"
+  echo "UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;"
+  echo "-- Example:"
+  echo "UPDATE users SET age = 29 WHERE name = 'John Doe';"
+  echo
+  echo "DELETE:"
+  echo "DELETE FROM table_name WHERE condition;"
+  echo "-- Example:"
+  echo "DELETE FROM users WHERE age < 18;"
+  echo
+  echo "CREATE TABLE:"
+  echo "CREATE TABLE table_name ("
+  echo "  column1 datatype PRIMARY KEY,"
+  echo "  column2 datatype,"
+  echo "  column3 datatype"
+  echo ");"
+  echo "-- Example:"
+  echo "CREATE TABLE users ("
+  echo "  id INT PRIMARY KEY AUTO_INCREMENT,"
+  echo "  name VARCHAR(100),"
+  echo "  age INT"
+  echo ");"
+  echo
+  echo "ALTER TABLE:"
+  echo "ALTER TABLE table_name ADD column_name datatype;"
+  echo "-- Example:"
+  echo "ALTER TABLE users ADD email VARCHAR(255);"
+  echo
+  echo "DROP TABLE:"
+  echo "DROP TABLE table_name;"
+  echo "-- Example:"
+  echo "DROP TABLE users;"
+  echo
+  echo "JOINS:"
+  echo "SELECT columns FROM table1"
+  echo "JOIN table2 ON table1.column = table2.column;"
+  echo "-- Example:"
+  echo "SELECT users.name, orders.order_date"
+  echo "FROM users"
+  echo "JOIN orders ON users.id = orders.user_id;"
 }
 
 mysql_cheatsheet() {
@@ -261,8 +319,11 @@ cheat() {
     shift
     aws_cheatsheet "$@"
     ;;
+  sql)
+    sql_cheatsheet
+    ;;
   *)
-    echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws}"
+    echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws|sql}"
     ;;
   esac
 }
