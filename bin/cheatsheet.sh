@@ -280,6 +280,83 @@ jq_cheatsheet() {
   echo "k get nodes -o json | jq 'paths | select(.[-1] == \"osImage\")'"
 }
 
+mongo_cheatsheet() {
+  echo "Connecting with MongoDB (mongosh):"
+  echo
+  echo "MongoDB can use the following environment variables:"
+  echo "export MONGO_USER=user"
+  echo "export MONGO_PASSWORD=password"
+  echo "export MONGO_HOST=host"
+  echo
+  echo "mongosh \$MONGO_HOST -u \$MONGO_USER -p \$MONGO_PASSWORD --authenticationDatabase admin"
+  echo
+  echo "List databases:"
+  echo "show dbs"
+  echo
+  echo "Switch to a database:"
+  echo "use database_name"
+  echo
+  echo "List collections:"
+  echo "show collections"
+  echo
+  echo "Find documents:"
+  echo "db.collection.find() -- Return all documents"
+  echo "db.collection.find({field: value}) -- Filter by field"
+  echo "db.collection.find().pretty() -- Pretty print JSON results"
+  echo
+  echo "Find with projections (only return specific fields):"
+  echo "db.collection.find({}, {field1: 1, field2: 1})"
+  echo
+  echo "Insert document:"
+  echo "db.collection.insertOne({field1: 'value1', field2: 'value2'})"
+  echo "db.collection.insertMany([{field1: 'value1'}, {field2: 'value2'}])"
+  echo
+  echo "Update document:"
+  echo "db.collection.updateOne({filter_field: value}, {\$set: {field: new_value}})"
+  echo "db.collection.updateMany({filter_field: value}, {\$set: {field: new_value}})"
+  echo
+  echo "Delete document:"
+  echo "db.collection.deleteOne({field: value})"
+  echo "db.collection.deleteMany({field: value})"
+  echo
+  echo "Aggregation example:"
+  echo "db.collection.aggregate(["
+  echo "{\$match: {field: value}},"
+  echo "{\$group: {_id: '\$field', count: {\$sum: 1}}}"
+  echo "])"
+  echo
+  echo "View indexes:"
+  echo "db.collection.getIndexes()"
+  echo
+  echo "Create index:"
+  echo "db.collection.createIndex({field: 1})"
+  echo
+  echo "Drop collection:"
+  echo "db.collection.drop()"
+  echo
+  echo "Rename collection:"
+  echo "db.collection.renameCollection('new_name')"
+  echo
+  echo "Create a user with permissions:"
+  echo "db.createUser({"
+  echo "user: 'username',"
+  echo "pwd: 'password',"
+  echo "roles: [{role: 'readWrite', db: 'database_name'}]"
+  echo "})"
+  echo
+  echo "View current operations:"
+  echo "db.currentOp()"
+  echo
+  echo "Kill an operation:"
+  echo "db.killOp(<operation_id>)"
+  echo
+  echo "Change owner on collections:"
+  echo "db.runCommand({"
+  echo "collMod: 'collection_name',"
+  echo "validator: { \$jsonSchema: { bsonType: 'object', required: ['owner'], properties: { owner: { bsonType: 'string' } } } }"
+  echo "})"
+}
+
 # Main function
 cheat() {
   case "$1" in
@@ -322,8 +399,11 @@ cheat() {
   sql)
     sql_cheatsheet
     ;;
+  mongo)
+    mongo_cheatsheet
+    ;;
   *)
-    echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws|sql}"
+    echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws|sql|mongo}"
     ;;
   esac
 }
