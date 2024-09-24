@@ -304,6 +304,32 @@ mongo_cheatsheet() {
   echo "db.collection.find({field: value}) -- Filter by field"
   echo "db.collection.find().pretty() -- Pretty print JSON results"
   echo
+  echo "Complex find operations:"
+  echo
+  echo "\$or -- Match documents with at least one condition:"
+  echo "db.collection.find({\$or: [{field1: value1}, {field2: value2}]})"
+  echo
+  echo "\$and -- Match documents with all conditions:"
+  echo "db.collection.find({\$and: [{field1: value1}, {field2: value2}]})"
+  echo
+  echo "\$in -- Match documents with values in an array:"
+  echo "db.collection.find({field: {\$in: [value1, value2]}})"
+  echo
+  echo "\$nin -- Exclude documents with values in an array:"
+  echo "db.collection.find({field: {\$nin: [value1, value2]}})"
+  echo
+  echo "\$not -- Invert the effect of a query:"
+  echo "db.collection.find({field: {\$not: {operator: value}}})"
+  echo
+  echo "\$nor -- Match documents that do not satisfy any condition:"
+  echo "db.collection.find({\$nor: [{field1: value1}, {field2: value2}]})"
+  echo
+  echo "\$exists -- Check if a field exists:"
+  echo "db.collection.find({field: {\$exists: true}})"
+  echo
+  echo "\$type -- Filter by BSON type of a field:"
+  echo "db.collection.find({field: {\$type: 'string'}})"
+  echo
   echo "Find with projections (only return specific fields):"
   echo "db.collection.find({}, {field1: 1, field2: 1})"
   echo
