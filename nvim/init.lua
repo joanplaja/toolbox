@@ -43,4 +43,5 @@ vim.api.nvim_set_keymap(
   { noremap = true, desc = "Search on current file" }
 )
 
--- Buffers
+vim.api.nvim_set_keymap("n", "<leader>eh", ":Neotree toggle left<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>el", ":Neotree toggle right<CR>", { noremap = true, silent = true })
