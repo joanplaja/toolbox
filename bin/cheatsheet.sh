@@ -383,6 +383,13 @@ mongo_cheatsheet() {
   echo "})"
 }
 
+nvim_cheatsheet() {
+  echo
+  echo "Search and replace:"
+  echo
+  echo "%s/searchstring/replacestring/gc"
+}
+
 # Main function
 cheat() {
   case "$1" in
@@ -428,8 +435,11 @@ cheat() {
   mongo)
     mongo_cheatsheet
     ;;
+  nvim)
+    nvim_cheatsheet
+    ;;
   *)
-    echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws|sql|mongo}"
+    echo "Usage: $0 {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker|aws|sql|mongo|nvim}"
     ;;
   esac
 }
