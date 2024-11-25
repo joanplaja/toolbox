@@ -67,6 +67,7 @@ linux_cheatsheet() {
     echo "journalctl -p <priority> - View logs of a specific priority (e.g., 0 for emergency, 3 for errors)"
     echo "journalctl --disk-usage - Show the disk space used by the journal"
     echo "journalctl --vacuum-size=1G - Reduce journal size to 1GB"
+    echo "systemctl list-unit-files | grep enabled"
     echo "journalctl -F _SYSTEMD_UNIT - List services"
     ;;
   *)
