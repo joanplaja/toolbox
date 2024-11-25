@@ -70,7 +70,7 @@ linux_cheatsheet() {
     echo "journalctl -F _SYSTEMD_UNIT - List services"
     ;;
   *)
-    echo "Usage: cheat linux {debug|grep|network|rsync|zip}"
+    echo "Usage: cheat linux {debug|grep|network|rsync|zip|journalctl}"
     ;;
   esac
 }
