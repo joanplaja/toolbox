@@ -58,6 +58,17 @@ linux_cheatsheet() {
     echo "unzip archive.zip -d target_dir - Extract the contents of a zip archive to target_dir"
     echo "zip -u archive.zip file1 - Update file1 in the zip archive"
     ;;
+  journalctl)
+    echo "journalctl - View all system logs"
+    echo "journalctl -u <service> - View logs for a specific service"
+    echo "journalctl -b - View logs from the current boot"
+    echo "journalctl --since '1 hour ago' - View logs from the last hour"
+    echo "journalctl -f - Follow logs in real time (like 'tail -f')"
+    echo "journalctl -p <priority> - View logs of a specific priority (e.g., 0 for emergency, 3 for errors)"
+    echo "journalctl --disk-usage - Show the disk space used by the journal"
+    echo "journalctl --vacuum-size=1G - Reduce journal size to 1GB"
+    echo "journalctl -F _SYSTEMD_UNIT - List services"
+    ;;
   *)
     echo "Usage: cheat linux {debug|grep|network|rsync|zip}"
     ;;
