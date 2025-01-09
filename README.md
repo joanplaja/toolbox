@@ -1,4 +1,3 @@
-
 <div align="center">
   <h1>Toolbox</h1>
   <p>This repository contains all necessary tools that I usually use, such as Neovim configuration and my cheat command script.</p>
@@ -28,11 +27,44 @@
 
 ## Installation
 
+This script is compatible with Unix-like operating systems (Linux, macOS) and requires `curl` to download the script. If `curl` is unavailable, you can use `wget` as an alternative:
+
+With `curl`:
 ```
 curl -o cheatsheet.sh https://raw.githubusercontent.com/joanplaja/toolbox/main/bin/cheatsheet.sh && source cheatsheet.sh
 ```
 
+With `wget`:
+```
+wget -O cheatsheet.sh https://raw.githubusercontent.com/joanplaja/toolbox/main/bin/cheatsheet.sh && source cheatsheet.sh
+```
+
+To make the script permanently available, add it to your shell configuration file. For example:
+
+In `~/.bashrc` (for Bash):
+```
+echo 'source /path/to/cheatsheet.sh' >> ~/.bashrc
+```
+
+In `~/.zshrc` (for Zsh):
+```
+echo 'source /path/to/cheatsheet.sh' >> ~/.zshrc
+```
+
+After updating the configuration file, reload it using:
+```
+source ~/.bashrc  # For Bash
+source ~/.zshrc   # For Zsh
+```
+
 ## Example
+
+```
+cheat
+
+Usage: cheat {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker
+|aws}
+```
 
 ```
 cheat redis
