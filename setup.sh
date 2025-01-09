@@ -47,7 +47,7 @@ nvim() {
 		mv build/bin/nvim /usr/bin/
 		# Configure Neovim with a custom configuration
 		mkdir -p ~/.config/nvim
-		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/improving_readme.tar.gz |
+		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz |
 			tar xz -C ~/.config/nvim --strip-components=2 toolbox-main/nvim
 		;;
 	*)
