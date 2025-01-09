@@ -1,8 +1,28 @@
-# Mac Setup
 
-```
-curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
-```
+<div align="center">
+  <h1>Toolbox</h1>
+  <p>This repository contains all necessary tools that I usually use, such as Neovim configuration and my cheat command script.</p>
+</div>
+
+# Table of Contents
+
+- [Cheat command](#cheat-command)
+  - [Installation](#installation)
+  - [Example](#example)
+- [Neovim](#neovim)
+  - [Installation](#installation-1)
+  - [Key mappings](#key-mappings)
+    - [Search](#search)
+    - [Cursor](#cursor)
+    - [Text manipulation](#text-manipulation)
+    - [Copying](#copying)
+    - [Programming](#programming)
+    - [Buffers](#buffers)
+    - [Windows](#windows)
+    - [Terminal](#terminal)
+    - [Files and folders](#files-and-folders)
+    - [File explorer (neotree) commands](#file-explorer-neotree-commands)
+    - [Tabs](#tabs)
 
 # Cheat command
 
@@ -10,7 +30,7 @@ curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh
 
 ```
 curl -o cheatsheet.sh https://raw.githubusercontent.com/joanplaja/toolbox/main/bin/cheatsheet.sh && source cheatsheet.sh
- ```
+```
 
 ## Example
 
@@ -23,62 +43,54 @@ INFO keyspace - Get databases and its information
 SELECT database - Select a database to work on
 KEYS * - List all keys on the current database
 FLUSHDB - Delete all keys on the current database
-
 ```
 
-# Neovim 
+# Neovim
 
 Neovim template https://www.lazyvim.org/ adapted to my style.
 
 ## Installation
 
-### Standalone
+Mac:
+```
+curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s mac
+```
 
 Ubuntu:
 ```
- curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim ubuntu
- ```
- Debian:
+curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim ubuntu
 ```
- curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian
- ```
 
-### Docker
+Debian:
+```
+curl -sSL https://raw.githubusercontent.com/joanplaja/toolbox/main/setup.sh | sh -s nvim debian
+```
 
-## key mappings
-
-brew install gnu-sed add with ansible ( used for search and replace)
-
-copilot needs node install version
-from: https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
-nvm install 16
-Copilot auth ( to setup )
-then ready
+## Key mappings
 
 \+ : Mandatory key combination
 
 \*: Optional key combination
 
-### Search 
+### Search
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  leader + s + g    |   Search on all files as a grep           |
-|  leader + f + f    |   Find files by name           |
-
+| leader + s + g    | Search on all files as a grep           |
+| leader + f + f    | Find files by name           |
 
 ### Cursor
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  0    |   Start of line           |
-|  $    |   End of line           |
-|  gg    |   Beginning of file           |
-|  G   |   End of file           |
-|  w   |   Next word           |
-|  b   |   Previous word           |
+| 0    | Start of line           |
+| $    | End of line           |
+| gg    | Beginning of file           |
+| G   | End of file           |
+| w   | Next word           |
+| b   | Previous word           |
 
-### Text manipulation 
+### Text manipulation
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
@@ -87,15 +99,13 @@ then ready
 | 0 (first position) + gg (first line) + visual + G  | Select all |
 | leader + s + A  | Select all |
 | (visual mode) + leader + u/U  | Transform selection to lowercase/uppercase |
-| (visual mode) + gsa + ( (,[,",' .. ) | Add surronding text hola -> (hola) | 
-
+| (visual mode) + gsa + ( (,[,\"', .. ) | Add surrounding text hola -> (hola) |
 
 ### Copying
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-| yyp     | copy current line to below                   |
-
+| yyp     | Copy current line to below                   |
 
 ### Programming
 
@@ -104,7 +114,6 @@ then ready
 | leader + g + d  | Go to definition |
 | K  | Hover to show information (ex. function description)   |
 
-
 ### Buffers
 
 | Key/Command       | Action Description                                  |
@@ -112,33 +121,31 @@ then ready
 | :ls               | List all open buffers                               |
 | shift + h           | Previous buffer                         |
 | shift + l           | Next buffer                   |
-| leader + b + d ( same as :bd )               | Close the current buffer                            |
+| leader + b + d (same as :bd) | Close the current buffer                            |
 | :w                | Save changes to the current buffer                  |
 
 ### Windows
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  ctrl + w + (H|L) | Move current window to (left|right) window |
-|  leder + w + (h\|j\|k\|l) | Move to (left\|top\|bottom\|right) windows |
+| ctrl + w + (H|L) | Move current window to (left|right) window |
+| leader + w + (h|j|k|l) | Move to (left|top|bottom|right) windows |
 
 ### Terminal
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  leder + t + (j\|k\|l) | Open terminal on (top\|bottom\|right) windows |
-
+| leader + t + (j|k|l) | Open terminal on (top|bottom|right) windows |
 
 ### Files and folders
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-|  leader + e   | Open file explorer                     |
-|  :edit $filename   | Creates/Opens files                     |
+| leader + e   | Open file explorer                     |
+| :edit $filename   | Creates/Opens files                     |
 | leader + c + p  | Copy current file relative path  |
 
-
-### File explorer (neotree) commands ( leader + e)
+### File explorer (neotree) commands (leader + e)
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
@@ -155,5 +162,6 @@ then ready
 
 | key/command     | action description                                  |
 |-----------------|-----------------------------------------------------|
-| tab * (h\|l)     | Switch tab (left\|right)                    |
+| tab * (h|l)     | Switch tab (left|right)                    |
 | leader + b + d     | Delete tab                    |
+
