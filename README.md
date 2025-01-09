@@ -1,32 +1,3 @@
-
-<div align="center">
-  <h1>Toolbox</h1>
-  <p>This repository contains all necessary tools that I usually use, such as Neovim configuration and my cheat command script.</p>
-</div>
-
-# Table of Contents
-
-- [Cheat command](#cheat-command)
-  - [Installation](#installation)
-  - [Example](#example)
-- [Neovim](#neovim)
-  - [Installation](#installation-1)
-  - [Key mappings](#key-mappings)
-    - [Search](#search)
-    - [Cursor](#cursor)
-    - [Text manipulation](#text-manipulation)
-    - [Copying](#copying)
-    - [Programming](#programming)
-    - [Buffers](#buffers)
-    - [Windows](#windows)
-    - [Terminal](#terminal)
-    - [Files and folders](#files-and-folders)
-    - [File explorer (neotree) commands](#file-explorer-neotree-commands)
-    - [Tabs](#tabs)
-
-# Cheat command
-
-## Installation
 <div align="center">
   <h1>Toolbox</h1>
   <p>This repository contains all necessary tools that I usually use, such as Neovim configuration and my cheat command script.</p>
