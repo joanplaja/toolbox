@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e # Exit on any error
+
 mac() {
 	# Check if Homebrew is installed
 	if ! command -v brew &>/dev/null; then
@@ -29,17 +31,24 @@ nvim() {
 	# Download the nvim configuration folder
 	case "$os" in
 	debian | ubuntu)
-		apt-get update && apt-get install -y curl git tar ninja-build gettext cmake unzip build-essential
-		# Install neovim
+		# Update and install dependencies
+		apt-get update && apt-get install -y \
+			curl git tar ninja-build gettext cmake unzip build-essential
+		# Clone the Neovim repository
 		git clone https://github.com/neovim/neovim
-		cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+		cd neovim
+		# Checkout the specific version (v0.9.5)
 		git checkout v0.9.5
-		make
+		# Build Neovim
+		make CMAKE_BUILD_TYPE=RelWithDebInfo
+		# Install Neovim
 		make install
+		# Move the binary to a standard location
 		mv build/bin/nvim /usr/bin/
-		# Configure my nvim configuration
+		# Configure Neovim with a custom configuration
 		mkdir -p ~/.config/nvim
-		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/main.tar.gz | tar xz -C ~/.config/nvim --strip-components=2 toolbox-main/nvim
+		curl -sSL https://github.com/joanplaja/toolbox/archive/refs/heads/improving_readme.tar.gz |
+			tar xz -C ~/.config/nvim --strip-components=2 toolbox-main/nvim
 		;;
 	*)
 		echo "Unsupported operating system: $os"
