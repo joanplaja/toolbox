@@ -27,9 +27,63 @@
 # Cheat command
 
 ## Installation
+<div align="center">
+  <h1>Toolbox</h1>
+  <p>This repository contains all necessary tools that I usually use, such as Neovim configuration and my cheat command script.</p>
+</div>
 
+# Table of Contents
+
+- [Cheat command](#cheat-command)
+  - [Installation](#installation)
+  - [Example](#example)
+- [Neovim](#neovim)
+  - [Installation](#installation-1)
+  - [Key mappings](#key-mappings)
+    - [Search](#search)
+    - [Cursor](#cursor)
+    - [Text manipulation](#text-manipulation)
+    - [Copying](#copying)
+    - [Programming](#programming)
+    - [Buffers](#buffers)
+    - [Windows](#windows)
+    - [Terminal](#terminal)
+    - [Files and folders](#files-and-folders)
+    - [File explorer (neotree) commands](#file-explorer-neotree-commands)
+    - [Tabs](#tabs)
+
+# Cheat command
+
+## Installation
+
+This script is compatible with Unix-like operating systems (Linux, macOS) and requires `curl` to download the script. If `curl` is unavailable, you can use `wget` as an alternative:
+
+With `curl`:
 ```
 curl -o cheatsheet.sh https://raw.githubusercontent.com/joanplaja/toolbox/main/bin/cheatsheet.sh && source cheatsheet.sh
+```
+
+With `wget`:
+```
+wget -O cheatsheet.sh https://raw.githubusercontent.com/joanplaja/toolbox/main/bin/cheatsheet.sh && source cheatsheet.sh
+```
+
+To make the script permanently available, add it to your shell configuration file. For example:
+
+In `~/.bashrc` (for Bash):
+```
+echo 'source /path/to/cheatsheet.sh' >> ~/.bashrc
+```
+
+In `~/.zshrc` (for Zsh):
+```
+echo 'source /path/to/cheatsheet.sh' >> ~/.zshrc
+```
+
+After updating the configuration file, reload it using:
+```
+source ~/.bashrc  # For Bash
+source ~/.zshrc   # For Zsh
 ```
 
 ## Example
