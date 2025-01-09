@@ -60,6 +60,13 @@ source ~/.zshrc   # For Zsh
 ## Example
 
 ```
+cheat
+
+Usage: cheat {linux|git|redis|kubernetes|ssh|postgres|opensearch|mysql|jq|docker
+|aws}
+```
+
+```
 cheat redis
 
 redis-cli -h HOST_NAME - Connecting with cli to redis
